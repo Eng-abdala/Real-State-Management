@@ -31,7 +31,7 @@ const imagelocation = multer.diskStorage({
 const upload = multer({ storage: imagelocation });
 
 // Creating post API
-app.post('/post-house', upload.single('img'), async (req, res) => { 
+app.post('/posthouse', upload.single('img'), async (req, res) => { 
     const postHouse = RentHouse({
         image: req.file.filename,
         title: req.body.title,
@@ -56,6 +56,18 @@ app.get('/gethouse', async (req, res) => {
         res.send(getHouse);
     }
 });
+
+// Api Delete
+
+app.delete("/remove/:id", async (req,res)=>{
+    const remove = await RentHouse.deleteOne({
+        _id: req.params.id
+    })
+    if(remove){
+        res.send("the data has ben removed")
+    }
+
+})
 
 
 // image route 
