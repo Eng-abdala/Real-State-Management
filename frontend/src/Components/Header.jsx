@@ -59,7 +59,7 @@ useEffect(()=>{
     transition={{ duration: 1, delay: 1 }}
     
     className="border-2 border-[#a8dadc] bg-[#003049] text-white mt-3 w-[650px]  py-4 rounded-4xl outline-none pl-2" type="text" placeholder="Address, Price Name" />
-    <motion.i  className="fa-solid fa-magnifying-glass text-white absolute text-3xl top-[272px] right-[456px]"
+    <motion.i  className="fa-solid fa-magnifying-glass text-white absolute text-3xl top-[272px] right-[320px]"
      initial={{ opacity: 0 , y: 100}}
      animate={{ opacity: 1, y: 0 }}
      transition={{ duration: 1, delay: 1.5 }}
