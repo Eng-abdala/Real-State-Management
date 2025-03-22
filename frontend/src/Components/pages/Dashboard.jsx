@@ -15,7 +15,7 @@ export default function Dashboard(){
 
     const navigate=useNavigate()
 
-    const admin =localStorage.getItem("Admin")
+    const admin =localStorage.getItem("admin")
     
     const protectRouter=()=>{
         if(!admin){

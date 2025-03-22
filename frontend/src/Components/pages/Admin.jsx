@@ -26,6 +26,7 @@ export default function Admin(){
                 if(res.data.success){
                     toast.success("login successfu")
                     navigate("/Dashboard")
+                    localStorage.setItem("admin",JSON.stringify(res.data.data))
                 }
                 else{
                     toast.error("username and password are incorrect!")
