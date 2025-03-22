@@ -30,7 +30,6 @@ useEffect(()=>{
      <div className="flex  justify-between px-20 bg-[#003049] text-white py-6 items-center ">
         <h1 className="text-4xl font-[JosefinSans]">Real State</h1>
 
-<<<<<<< HEAD
         <div>
           <button className="bg-[#a8dadc] px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl">
             <Link to="/login">Login</Link>
@@ -98,82 +97,16 @@ useEffect(()=>{
           })}
         </motion.div>
       </div>
-=======
-       <div>
-        <button className="bg-[#a8dadc] px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl"><Link to="/login">Login</Link></button> 
-        <button className=" px-8 py-2 text-[20px] text-[#a8dadc] m-3 rounded-4xl hover:border-2 hover:border-[#a8dadc]"><Link to="/signUp">Sign Up</Link></button>
-       </div>
->>>>>>> cac030b80ba0d9c5bc23656bc43673386b772310
-    </div>
+   
 
-    {/* Second Section */}
-
-    <div   className="bg-[url('src/images/dd.jpg')] relative h-[600px] bg-cover bg-center bg-gradient-to-b from-blue-500 to-green-500  items-center text-center pt-52" >
-
-    <motion.h1 className="text-4xl text-[#036194] font-bold ">
-        {letters.map((letter, index) => (
-          <motion.span
-            key={index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.1, delay: index * 0.1,  }}
-            >
-            {letter}
-          </motion.span>
-        ))}
-    
-    </motion.h1>
-    <motion.input 
-    initial={{ opacity: 0 , y: 100}}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1, delay: 1 }}
-    
-    className="border-2 border-[#a8dadc] bg-[#003049] text-white mt-3 w-[650px]  py-4 rounded-4xl outline-none pl-2" type="text" placeholder="Address, Price Name" />
-    <motion.i  className="fa-solid fa-magnifying-glass text-white absolute text-3xl top-[272px] right-[456px]"
-     initial={{ opacity: 0 , y: 100}}
-     animate={{ opacity: 1, y: 0 }}
-     transition={{ duration: 1, delay: 1.5 }}
-    
-    ></motion.i>
-    </div>
-
-
-    {/* Newest listings */}
-
-   <div>
-    <h1 className='text-center font-[#036194] text-4xl font-bold mt-10'>Newest listings</h1>
-
-    <motion.div className='grid grid-cols-[300px_300px_300px_300px] justify-center gap-8 my-10'
-
-    initial={{ opacity: 0 , y: 100}}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1, delay: 3}}
->
-
-    {
-        data.map((item)=>{
-            return <div className='bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded '>
-            <img className='w-[300px] rounded' src={`http://localhost:5000/images/${item.image}`} alt="" />
-            <h1 className='text-[#006400] pt-2 text-[18px] pl-1 font-semibold'>{item.title}</h1>
-            <h1 className='font-bold py-2 pl-1'>{item.price}</h1>
-            <div className='flex  gap-2 pl-1'>
-                <h1> <span className='font-bold'>{item.bed}</span> bed</h1>
-                <h1> <span className='font-bold'>{item.bath}</span> bath</h1>
-                <h1> <span className='font-bold'>{item.sqft}</span> sqft</h1>
-            </div>
-            <h1 className='py-2 pl-1'>{item.location}</h1>
-        </div>
-            }
-        )
-    }
+   
 
    
     
-    </motion.div>
-
-   </div>
+  
 
     </div>
+     
 
 
 
