@@ -74,6 +74,81 @@ app.delete("/remove/:id", async (req,res)=>{
 app.use('/images',express.static("images"))
 
 
+// User Register And Login Section
+const RegisterLogin = require('./model/RegisterLogin')
+
+// post Register 
+
+app.post("/Register",  async (req,res)=>{
+
+    const register= RegisterLogin(req.body)
+    const saveDta = await register.save()
+    if(saveDta){
+        res.send("The use has alredy registered")
+    }
+
+})
+
+// post login
+
+app.post("/login", async (req,res)=>{
+    const Login = await RegisterLogin.findOne(req.body).select("-Password")
+    if(Login){
+        res.send({
+            success:"Login Successfully",
+            data: Login
+        })
+    }
+    else{
+        res.send({ error:"username and passowrd are incorecct"})    }
+})
+
+// delete register 
+app.delete("/removeRegister/:id", async (req,res)=>{
+    const removee= await RegisterLogin.deleteOne({
+        _id: req.params.id
+    })
+    if(removee){
+        res.send("The register has been deleted")
+    }
+})
+
+
+// Admin Api
+
+const Admin= require("./model/Admin")
+
+
+app.post("/AdminLogin", async (req,res)=>{
+    const Login = await Admin.findOne(req.body)
+    if(Login){
+        res.send({
+            success:"Login Successfully",
+            data: Login
+        })
+    }
+    else{
+        res.send({ error:"username and passowrd are incorecct"})    }
+})
+
+// Admin Register
+app.post("/AdminRegister",  async (req,res)=>{
+
+    const register= Admin(req.body)
+    const saveDta = await register.save()
+    if(saveDta){
+        res.send("The use has alredy registered")
+    }
+
+})
+
+
+
+
+
+
+
+
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
 });

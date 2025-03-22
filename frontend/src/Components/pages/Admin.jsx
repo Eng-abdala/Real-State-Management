@@ -5,13 +5,10 @@ import { motion } from "framer-motion";
 import axios from "axios";
 
 
-export default function Login(){
-
-
+export default function Admin(){
 
     const [username,setusename]=useState('')
     const [Passwod,setPassword]=useState('')
-
 
     const navigate=useNavigate()
 
@@ -22,12 +19,13 @@ export default function Login(){
         }
 
         else{
-            axios.post("http://localhost:5000/login",{
+            axios.post("http://localhost:5000/AdminLogin",{
                 "username": username,
                 "Password": Passwod
             }).then((res)=>{
                 if(res.data.success){
-                   navigate("/")
+                    toast.success("login successfu")
+                    navigate("/Dashboard")
                 }
                 else{
                     toast.error("username and password are incorrect!")
@@ -41,27 +39,15 @@ export default function Login(){
 
     }
 
-    // sign in Button
 
-    const signup=( e)=>{
-        e.preventDefault()
-        navigate("/signUp")
-
-    }
-
-    return <div className="bg-[#036] h-screen">
+    return <div className="bg-[#cae9ff] h-screen">
      <motion.div className="flex justify-center pt-20"
     initial={{opacity:0, x:'-100vh'}}
     animate={{opacity:1 ,x:0}}
     transition={{duration:1}}  >
 
-        <div className="border-2 border-[#036194] bg-[#cae9ff] w-[400px] text-center shadow-2xl rounded">
-        <motion.img 
-        initial={{opacity:0 , y:-20}}
-        animate={{opacity:1 ,y:0}}
-        transition={{duration:1 , delay:0.6}}
-        
-        className="w-[400px]" src="src/images/login.jpeg" alt="" />
+        <div className="border-2 border-[#036194] bg-[#036194] text-[#cae9ff] w-[400px] text-center shadow-2xl py-20 rounded">
+            <h1 className="text-3xl font-semibold pb-10">Admin Page</h1>
         <form className="relative">
             <motion.input
             value={username}
@@ -92,15 +78,12 @@ export default function Login(){
             
             className="w-[30px] absolute top-22 left-7" src="src/images/padlock.png" alt="" />
 
-            <motion.button onClick={Handle} className="bg-[#036194] text-white px-32 py-2 text-2xl rounded-2xl my-2"
+            <motion.button onClick={Handle} className="bg-[#cae9ff] text-[#036194] px-32 py-2 text-2xl rounded-2xl my-2"
              initial={{opacity:0 , y:20}}
              animate={{opacity:1 ,y:0}}
              transition={{duration:1 , delay:1.7}}
-            
-            
-            >Login</motion.button>
+             >Login</motion.button>
 
-            <h1 className="py-4">Don't have account? <button onClick={signup} className="text-[#036194] font-semibold cursor-pointer">SignUp</button></h1>
 
 
 

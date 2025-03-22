@@ -2,9 +2,11 @@ import {motion} from 'framer-motion'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+
 export default function Header() {
 
 const [data, setData] = useState([])
+const [search, setSearch] = useState("")
 
 const getHouse = ()=>{
 
@@ -17,6 +19,12 @@ const getHouse = ()=>{
     })
 
 }
+
+
+const searchHouse  = data.filter((item)=>{
+    return item.title.toLowerCase().includes(search.toLowerCase())
+
+})
 
 useEffect(()=>{
     getHouse()  
@@ -52,7 +60,7 @@ useEffect(()=>{
             </motion.span>
           ))}
         </motion.h1>
-        <motion.input
+        <motion.input value={search} onChange={(e)=>setSearch(e.target.value)}
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
@@ -78,10 +86,10 @@ useEffect(()=>{
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 3 }}
         >
-          {data.map((item) => {
+          {searchHouse.map((item,index) => {
             return (
-              <div className="bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded">
-                <img className="w-[300px] rounded" src={`http://localhost:5000/images/${item.image}`} alt="" />
+              <div className="bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded"> 
+               <Link to={`/rent/${index}`}>  <img className="w-[300px] h-[250px] rounded" src={`http://localhost:5000/images/${item.image}`} alt="" /> </Link>
                 <h1 className="text-[#006400] pt-2 text-[18px] pl-1 font-semibold">{item.title}</h1>
                 <h1 className="font-bold py-2 pl-1">${item.price}</h1>
                 <div className="flex gap-2 pl-1">
@@ -90,21 +98,14 @@ useEffect(()=>{
                   <h1><span className="font-bold">{item.sqft}</span> sqft</h1>
                 </div>
                 <h1 className="py-2 pl-1">{item.location}</h1>
-              </div>
+              </div> 
             )
           })}
         </motion.div>
       </div>
-   
-
-   
-
-   
-    
-  
-
     </div>
-     
+
+
 
 
 
