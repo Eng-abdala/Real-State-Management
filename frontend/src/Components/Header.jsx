@@ -1,8 +1,29 @@
 import {motion} from 'framer-motion'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 export default function Header() {
 
+const [data, setData] = useState([])
 
+const getHouse = (event)=>{
+    event.preventDefault();
+
+    axios.get('http://localhost:5000/gethouse').then((res) => {
+        console.log(res.data)
+        // setData(res.data)
+        
+    }).catch((error)=>{
+        console.log(error)
+
+    })
+
+}
+
+useEffect(()=>{
+    getHouse()  
+}   
+,[])
     const sentence = "Welcome Real State Management🚀";
     const letters = sentence.split("");
 
@@ -59,58 +80,27 @@ export default function Header() {
     initial={{ opacity: 0 , y: 100}}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1, delay: 3}}
+>
+
+    {
+        data.map((item)=>{
+            return <div className='bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded '>
+            <img className='w-[300px] rounded' src={`http://localhost:5000/images/${item.image}`} alt="" />
+            <h1 className='text-[#006400] pt-2 text-[18px] pl-1 font-semibold'>{item.title}</h1>
+            <h1 className='font-bold py-2 pl-1'>{item.price}</h1>
+            <div className='flex  gap-2 pl-1'>
+                <h1> <span className='font-bold'>{item.bed}</span> bed</h1>
+                <h1> <span className='font-bold'>{item.bath}</span> bath</h1>
+                <h1> <span className='font-bold'>{item.sqft}</span> sqft</h1>
+            </div>
+            <h1 className='py-2 pl-1'>{item.location}</h1>
+        </div>
+            }
+        )
+    }
+
+   
     
-    
-    
-    >
-
-    <div className='bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded '>
-        <img className='w-[300px] rounded' src="src/images/pexels-binyaminmellish-106399.jpg" alt="" />
-        <h1 className='text-[#006400] pt-2 text-[18px] pl-1 font-semibold'>Single-family Home</h1>
-        <h1 className='font-bold py-2 pl-1'>$400$</h1>
-        <div className='flex  gap-2 pl-1'>
-            <h1> <span className='font-bold'>3</span> bed</h1>
-            <h1> <span className='font-bold'>3.5</span> bath</h1>
-            <h1> <span className='font-bold'>2,644</span> sqft</h1>
-        </div>
-        <h1 className='py-2 pl-1'>Mogadishu-Wadajir-somalia</h1>
-    </div>
-
-    <div className='bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded'>
-        <img className='w-[300px] rounded' src="src/images/pexels-binyaminmellish-106399.jpg" alt="" />
-        <h1 className='text-[#006400] pl-1 pt-2 text-[18px] font-semibold'>Single-family Home</h1>
-        <h1 className='font-bold py-2 pl-1'>$400$</h1>
-        <div className='flex  gap-2 pl-1'>
-            <h1> <span className='font-bold'>3</span> bed</h1>
-            <h1> <span className='font-bold'>3.5</span> bath</h1>
-            <h1> <span className='font-bold'>2,644</span> sqft</h1>
-        </div>
-        <h1 className='py-2 pl-1'>Mogadishu-Wadajir-somalia</h1>
-    </div>
-
-    <div className='bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded'>
-        <img className='w-[300px] rounded' src="src/images/pexels-binyaminmellish-106399.jpg" alt="" />
-        <h1 className='text-[#006400] pt-2 pl-1 text-[18px] font-semibold'>Single-family Home</h1>
-        <h1 className='font-bold py-2 pl-1'>$400$</h1>
-        <div className='flex  gap-2 pl-1'>
-            <h1> <span className='font-bold'>3</span> bed</h1>
-            <h1> <span className='font-bold'>3.5</span> bath</h1>
-            <h1> <span className='font-bold'>2,644</span> sqft</h1>
-        </div>
-        <h1 className='py-2 pl-1'>Mogadishu-Wadajir-somalia</h1>
-    </div>
-
-    <div className='bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded'>
-        <img className='w-[300px] rounded' src="src/images/pexels-binyaminmellish-106399.jpg" alt="" />
-        <h1 className='text-[#006400] pt-2 pl-1 text-[18px] font-semibold'>Single-family Home</h1>
-        <h1 className='font-bold py-2 pl-1'>$400$</h1>
-        <div className='flex  gap-2 pl-1'>
-            <h1> <span className='font-bold'>3</span> bed</h1>
-            <h1> <span className='font-bold'>3.5</span> bath</h1>
-            <h1> <span className='font-bold'>2,644</span> sqft</h1>
-        </div>
-        <h1 className='py-2 pl-1'>Mogadishu-Wadajir-somalia</h1>
-    </div>
     </motion.div>
 
    </div>
