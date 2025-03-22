@@ -83,7 +83,7 @@ export default function Header() {
               <div className="bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded">
                 <img className="w-[300px] rounded" src={`http://localhost:5000/images/${item.image}`} alt="" />
                 <h1 className="text-[#006400] pt-2 text-[18px] pl-1 font-semibold">{item.title}</h1>
-                <h1 className="font-bold py-2 pl-1">{item.price}</h1>
+                <h1 className="font-bold py-2 pl-1">${item.price}</h1>
                 <div className="flex gap-2 pl-1">
                   <h1><span className="font-bold">{item.bed}</span> bed</h1>
                   <h1> <span className="font-bold">{item.bath}</span> bath</h1>
