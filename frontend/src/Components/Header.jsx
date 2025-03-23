@@ -38,15 +38,13 @@ useEffect(()=>{
      <div className="flex  justify-between px-20 bg-[#003049] text-white py-6 items-center ">
         <h1 className="text-4xl font-[JosefinSans]">Real State</h1>
 
-        <div>
-          <button className="bg-[#a8dadc] px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl">
-            <Link to="/login">Login</Link>
-          </button>
-          <button className="px-8 py-2 text-[20px] text-[#a8dadc] m-3 rounded-4xl hover:border-2 hover:border-[#a8dadc]">
-            <Link to="/signUp">Sign Up</Link>
-          </button>
-        </div>
-      </div>
+       <div>
+        <button className="bg-[#a8dadc] px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl"><Link to="/login">Login</Link></button> 
+        <button className=" px-8 py-2 text-[20px] text-[#a8dadc] m-3 rounded-4xl hover:border-2 hover:border-[#a8dadc]"><Link to="/signUp">Sign Up</Link></button>
+       </div>
+    </div>
+
+   
 
       {/* Second Section */}
       <div className="bg-[url('src/images/dd.jpg')] relative h-[600px] bg-cover bg-center bg-gradient-to-b from-blue-500 to-green-500 items-center text-center pt-52">

@@ -2,6 +2,8 @@ import { useState } from "react"
 import {toast, Toaster} from "react-hot-toast"
 import { useNavigate } from 'react-router-dom';
 import {motion} from "framer-motion"
+import axios from "axios"
+
 export default function SignUp(){
 
 
@@ -21,6 +23,22 @@ export default function SignUp(){
         //     toast.success("Successfully Sign Up")
         //     navigate("/login")
         // }
+
+        else{
+            axios.post("http://localhost:5000/Register",{
+                "username": name,
+                "Email": Email,
+                "Password": Passwod
+            }).then(()=>{
+                toast.success("Congratulations")
+                setTimeout(() => {
+                    navigate("/login")
+                }, 2000);
+            }).catch((e)=>{
+                console.log(e)
+
+            })
+        }
 
     }
 
@@ -50,6 +68,7 @@ export default function SignUp(){
         />
         <form className="relative">
             <motion.input
+            value={name}
              initial={{opacity:0 ,x:-50}}
              animate={{opacity:1, x:0}}
              transition={{duration:1, delay:1}}
@@ -64,6 +83,7 @@ export default function SignUp(){
             className="w-[30px] absolute top-5 left-7" src="src/images/user-profile.png" alt="" />
 
             <motion.input
+            value={Email}
             initial={{opacity:0 ,x:-50}}
             animate={{opacity:1, x:0}}
             transition={{duration:1, delay:1.6}}
@@ -78,6 +98,7 @@ export default function SignUp(){
             className="w-[30px] absolute top-22 left-7" src="src/images/email (1).png" alt="" />
 
             <motion.input
+            value={Passwod}
             initial={{opacity:0 ,x:-50}}
             animate={{opacity:1, x:0}}
             transition={{duration:1, delay:2.4}}

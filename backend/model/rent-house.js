@@ -29,6 +29,7 @@ const rentHouseSchema =  mongoose.Schema({
         type:String,
         required:true
     },
+   
 
 })
 

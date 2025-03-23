@@ -4,6 +4,7 @@ import Login from "./Components/Login"
 import SignUp from "./Components/SignUp"
 import Dashboard from "./Components/pages/Dashboard"
 import RentHouse from "./Components/pages/RentHouse"
+import Admin from "./Components/pages/Admin"
 
 function App() {
   return <Routes>
@@ -13,6 +14,7 @@ function App() {
 
     <Route  path="/login" element={<Login/>}/>
     <Route  path="/signUp" element={<SignUp/>}/>
+    <Route  path="/Admin" element={<Admin/>}/>
 
   </Routes>
 }
