@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import {toast,Toaster} from "react-hot-toast"
+import { useNavigate } from "react-router-dom"
 
 export default function Dashboard(){
-
 
     const [tile,setTitle]=useState("")
     const [price,setPrice]=useState("")
@@ -12,6 +12,17 @@ export default function Dashboard(){
     const [sqrl,setSqrl]=useState("")
     const [location,setlocation]=useState("")
     const [img,setImg]=useState(null)
+
+    const navigate=useNavigate()
+
+    const admin =localStorage.getItem("Admin")
+    
+    const protectRouter=()=>{
+        if(!admin){
+          navigate("/Admin")
+        }
+      }
+    
 
     const PostDta=(e)=>{
         e.preventDefault()
@@ -38,6 +49,9 @@ export default function Dashboard(){
      })
 
     }
+    useEffect(()=>{
+        protectRouter()
+    })
 
 
 
