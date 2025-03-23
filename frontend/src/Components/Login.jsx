@@ -17,6 +17,10 @@ export default function Login(){
         if( Email.trim()=="" || Passwod.trim()==""){
             toast.error("Please Form the fill!")
         }
+        // else{
+        //     toast.success("Successfully Login")
+        //     navigate("/rent")
+        // }
 
     }
 

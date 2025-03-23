@@ -17,6 +17,10 @@ export default function SignUp(){
         if(name.trim()=="" || Email.trim()=="" || Passwod.trim()==""){
             toast.error("Please Form the fill!")
         }
+        // else{
+        //     toast.success("Successfully Sign Up")
+        //     navigate("/login")
+        // }
 
     }
 

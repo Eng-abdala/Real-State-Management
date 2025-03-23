@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function RentHouse() {
     const { id } = useParams(); // Get the index from the URL
-    const [houses, setHouses] = useState([]);
+    // const [houses, setHouses] = useState([]);
     const [house, setHouse] = useState(null);
 
     useEffect(() => {
