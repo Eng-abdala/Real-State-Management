@@ -183,6 +183,45 @@ app.post("/send-email", async (req, res) => {
 
 
 
+
+  // Import schema 
+const Complaint = require("./model/Complaints")
+
+//  API  POST
+app.post("/post/complainments", async (req, res) => {
+    try {
+        const { name, email, message } = req.body
+        const newComplaint = new Complaint({ name, email, message })
+        await newComplaint.save();
+        res.status(201).json({ message: "Complaint submitted successfully" })
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+})
+
+//  API  GET
+app.get("/get/complainments", async (req, res) => {
+    try {
+        const complaints = await Complaint.find()
+        res.status(200).json(complaints)
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
 });

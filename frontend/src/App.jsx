@@ -6,13 +6,17 @@ import Dashboard from "./Components/pages/Dashboard"
 import RentHouse from "./Components/pages/RentHouse"
 import Admin from "./Components/pages/Admin"
 import ContactForm from "./Components/pages/Contact"
-
+import ComplaintForm from "./Components/pages/ComplaintForm"
+import Complainment from "./Components/pages/complainment"
 function App() {
   return <Routes>
     <Route  path="/" element={<Header/>}/>
     <Route  path="/Dashboard" element={<Dashboard/>}/>
     <Route  path="/rent/:id" element={<RentHouse/>}/>
     <Route  path="/contact" element={<ContactForm/>}/>
+
+    <Route path="/ComplaintForm" element ={<ComplaintForm/>} />
+    <Route path="/Complainment" element ={<Complainment/>} />
 
     <Route  path="/login" element={<Login/>}/>
     <Route  path="/signUp" element={<SignUp/>}/>

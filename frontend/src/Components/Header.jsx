@@ -43,6 +43,14 @@ useEffect(()=>{
        <div>
         <button className="bg-[#a8dadc] px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl"><Link to="/login">Login</Link></button> 
         <button className=" px-8 py-2 text-[20px] text-[#a8dadc] m-3 rounded-4xl hover:border-2 hover:border-[#a8dadc]"><Link to="/signUp">Sign Up</Link></button>
+
+      <Link to={"/ComplaintForm"} > <button
+ 
+  className="bg-[#003049] border-2 border-slate-700 hover:bg-[#a8dadc] hover:text-black text-white px-4 py-2 rounded-full transition duration-300 ease-in-out shadow-md">
+  Send Complainment
+</button></Link>
+
+        
        </div>
     </div>
 
@@ -71,7 +79,7 @@ useEffect(()=>{
           placeholder="Address, Price Name"
         />
         <motion.i
-          className="fa-solid fa-magnifying-glass text-white absolute text-3xl top-[272px] right-[456px]"
+          className="fa-solid fa-magnifying-glass text-white absolute text-3xl top-[272px] right-[34%]"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
