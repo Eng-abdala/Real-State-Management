@@ -1,11 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function RentHouse() {
     const { id } = useParams(); // Get the index from the URL
     // const [houses, setHouses] = useState([]);
     const [house, setHouse] = useState(null);
+    const navigator = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:5000/gethouse')
@@ -16,6 +18,10 @@ export default function RentHouse() {
     }, [id]);
 
     if (!house) return <h1>Loading...</h1>;
+
+    const contact = (()=>{
+        navigator('/contact')
+    })
 
     return (
         <div className='flex justify-center  '>
@@ -50,20 +56,13 @@ Welcome to your dream apartment in {house.location}  This stunning {house.bed}-b
 
 </p>
 <p className='font-extralight py-5 text-sky-950'>Don't miss out—this apartment is waiting for you! 🚀✨</p>
-<button className='bg-sky-900 font-bold text-white text-[18px] px-[20px] py-0.5 rounded ml-[30%]'>Rent Now</button>
+<button className='bg-sky-900 font-bold text-white text-[18px] px-[20px] py-0.5 rounded ml-[30%]' onClick={contact}>Contact us</button>
 
 
         </div>
 
 
-
-
-
         </div>
-
-
-
-
 
 
     );

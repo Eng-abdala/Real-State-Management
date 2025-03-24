@@ -2,6 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const multer = require('multer');
+
+require("dotenv").config(); // Load environment variables
+const nodemailer = require("nodemailer"); // Import Nodemailer for sending emails
+
 const app = express();
 
 app.use(express.json());
@@ -144,7 +148,37 @@ app.post("/AdminRegister",  async (req,res)=>{
 
 
 
+// Email Sending API
 
+
+// POST route to handle form submission
+app.post("/send-email", async (req, res) => {
+    const { name, email, phone, description } = req.body; // Get form data from request
+  
+    // Configure Gmail SMTP using Nodemailer
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_RECEIVER, // Your Gmail (from .env)
+        pass: process.env.EMAIL_PASS, // App password (from .env)
+      },
+    });
+  
+    // Email details
+    const mailOptions = {
+      from:email, // Sender email
+      to: process.env.EMAIL_RECEIVER, // Receiver email
+      subject: "New Contact Form Submission", // Email subject
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${description}`, // Email content
+    };
+  
+    try {
+      await transporter.sendMail(mailOptions); // Send email
+      res.status(200).json({ message: "Email sent successfully!" }); // Success response
+    } catch (error) {
+      res.status(500).json({ error: "Failed to send email." }); // Error response
+    }
+  });
 
 
 
