@@ -28,10 +28,7 @@ export default function RentHouse() {
 
         <div className="p-10 w-[80%] m-auto shadow-lg inset-shadow-sky-900">
             <img src={`http://localhost:5000/images/${house.image}`} alt={house.title} className="w-full h-[600px] object-cover" />
-            {/* <h1 className="text-3xl font-bold">{house.title}</h1>
-            <p className="text-xl mt-2">${house.price}</p>
-            <p>{house.bed} Beds | {house.bath} Baths | {house.sqft} sqft</p>
-            <p className="mt-4">{house.location}</p> */}
+         
 
 
 
@@ -44,7 +41,7 @@ Welcome to your dream apartment in {house.location}  This stunning {house.bed}-b
 
 ✨ Spacious & Stylish: With 500 sqft of thoughtfully designed space, this apartment maximizes every inch to create a cozy yet functional home. <br />
 
-🛏️ {house.bed} Comfortable Bedrooms: Whether you need extra space for guests, an office, or a personal retreat, these rooms are perfect for relaxation. <br />
+🛏 {house.bed} Comfortable Bedrooms: Whether you need extra space for guests, an office, or a personal retreat, these rooms are perfect for relaxation. <br />
 
 🛁 {house.bath} Modern Bathrooms: Enjoy sleek finishes and refreshing showers to start your day feeling fresh! <br />
 
@@ -74,4 +71,3 @@ Welcome to your dream apartment in {house.location}  This stunning {house.bed}-b
 
     
 }
-

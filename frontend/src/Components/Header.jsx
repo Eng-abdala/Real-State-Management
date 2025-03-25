@@ -22,7 +22,9 @@ const getHouse = ()=>{
 
 
 const searchHouse  = data.filter((item)=>{
-    return item.title.toLowerCase().includes(search.toLowerCase())
+    return item.title.toLowerCase().includes(search.toLowerCase()) ||
+    item.location.toLowerCase().includes(search.toLowerCase()) ||
+        item.price.toString().includes(search)
 
 })
 
@@ -88,8 +90,9 @@ useEffect(()=>{
         >
           {searchHouse.map((item,index) => {
             return (
-              <div className="bg-[#a8dadc] shadow shadow-[#036194] w-[300px] rounded"> 
-               <Link to={`/rent/${index}`}>  <img className="w-[300px] h-[250px] rounded" src={`http://localhost:5000/images/${item.image}`} alt="" /> </Link>
+              <div className=" shadow-xl shadow-sky-200 w-[300px] rounded"> 
+               <Link to={`/rent/${index}`}> 
+                <img className="w-[300px] h-[250px] rounded" src={`http://localhost:5000/images/${item.image}`} alt="" /> </Link>
                 <h1 className="text-[#006400] pt-2 text-[18px] pl-1 font-semibold">{item.title}</h1>
                 <h1 className="font-bold py-2 pl-1">${item.price}</h1>
                 <div className="flex gap-2 pl-1">

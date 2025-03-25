@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import {toast, Toaster} from "react-hot-toast"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import { motion } from "framer-motion";
 import axios from "axios";
 
@@ -8,12 +8,30 @@ import axios from "axios";
 export default function Login(){
 
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        return () => {
+            // Only remove selected-item if leaving /rent
+            if (location.pathname === "/rent") {
+                console.log("Clearing selected-item from localStorage...");
+                localStorage.removeItem("selected-item");
+            }
+        };
+    }, [location.pathname]); // Runs whenever route changes
+  
+  
+     
+     
+    
+
+   
 
     const [username,setusename]=useState('')
     const [Passwod,setPassword]=useState('')
 
 
-    const navigate=useNavigate()
 
     const Handle =(e)=>{
         e.preventDefault()
@@ -31,7 +49,19 @@ export default function Login(){
                 "Password": Passwod
             }).then((res)=>{
                 if(res.data.success){
-                   navigate("/")
+                     // Retrieve the stored house data from localStorage
+      const selectedHouse = localStorage.getItem("selected-item");
+       // If data exists, redirect to rent-house page with house details in URL
+
+       if (!selectedHouse) {
+        localStorage.removeItem("selected-item");
+        navigate("/")
+    }
+    
+    else {
+            navigate("/rent");
+
+                      }
                 }
                 else{
                     toast.error("username and password are incorrect!")
@@ -43,7 +73,13 @@ export default function Login(){
         }
 
 
+
+
     }
+
+ 
+    
+
 
     // sign in Button
 
