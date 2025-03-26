@@ -81,20 +81,28 @@ app.use('/images',express.static("images"))
 
 
 
-// Update house availability when rented
-app.put('/rent/:id', async (req, res) => {
+app.put("/rent/:id", async (req, res) => {
     try {
-        const house = await RentHouse.findById(req.params.id);
-        if (!house) return res.status(404).json({ message: "House not found" });
+        const { id } = req.params;
+        const { available } = req.body; // Get new availability status
 
-        house.available = false; // Set house as unavailable
-        await house.save();
-        
-        res.json({ message: "House rented successfully!", house });
+        // Ensure the request has the 'available' field
+        if (available === undefined) {
+            // return res.status(400).json({ message: "Missing availability status" });
+            res.send("Missing availability status")
+        }
+
+        const updatedHouse = await RentHouse.findByIdAndUpdate(id, { available }, { new: true });
+
+        // res.status(200).json(updatedHouse);
+        res.send(updatedHouse)
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        // res.status(500).json({ message: "Error updating house status", error });
+        res.send(error)
     }
 });
+
+
 
 
 // User Register And Login Section
@@ -137,13 +145,15 @@ app.delete("/removeRegister/:id", async (req,res)=>{
 })
 
 
+
+
 // Admin Api
 
 const Admin= require("./model/Admin")
 
 
 app.post("/AdminLogin", async (req,res)=>{
-    const Login = await Admin.findOne(req.body)
+    const Login = await Admin.findOne(req.body).select("-Password")
     if(Login){
         res.send({
             success:"Login Successfully",
