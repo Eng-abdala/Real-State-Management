@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react"
+import {  useState } from "react"
 import axios from "axios"
 import {toast,Toaster} from "react-hot-toast"
-import { useNavigate } from "react-router-dom"
 
 export default function Dashboard(){
 
@@ -11,17 +10,10 @@ export default function Dashboard(){
     const [bath,setBath]=useState("")
     const [sqrl,setSqrl]=useState("")
     const [location,setlocation]=useState("")
+    const [Number,setNumber]=useState("")
     const [img,setImg]=useState(null)
 
-    const navigate=useNavigate()
-
-    const admin =localStorage.getItem("admin")
-    
-    const protectRouter=()=>{
-        if(!admin){
-          navigate("/Admin")
-        }
-      }
+  
     
 
     const PostDta=(e)=>{
@@ -33,6 +25,7 @@ export default function Dashboard(){
             "bath": bath,
             "sqft": sqrl,
             "location": location,
+            "Gurinumber": Number,
             "img": img
 
         },
@@ -49,9 +42,7 @@ export default function Dashboard(){
      })
 
     }
-    useEffect(()=>{
-        protectRouter()
-    })
+    
 
 
 
@@ -67,6 +58,7 @@ export default function Dashboard(){
     <input  onChange={(e)=> setBath(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter bath" /> <br />
     <input  onChange={(e)=> setSqrl(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter sqrl" /> <br />
     <input  onChange={(e)=> setlocation(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter Location" /> <br />
+    <input  onChange={(e)=> setNumber(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter The Unique Number of the Home" /> <br />
     <input onChange={(e)=> setImg(e.target.files[0])}  className="w-[400px] text-[20px] py-2" type="file" /> <br />
     <button onClick={PostDta} className="bg-[#a8dadc] text-3xl px-20 py-2 text-white rounded my-3">Save</button>
 

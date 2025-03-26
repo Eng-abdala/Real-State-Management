@@ -98,7 +98,7 @@ useEffect(()=>{
         >
           {searchHouse.map((item,index) => {
             return (
-              <div className=" shadow-xl shadow-sky-200 w-[300px] rounded"> 
+              <div className=" shadow-xl shadow-sky-200 w-[300px] rounded relative"> 
                <Link to={`/rent/${index}`}> 
                 <img className="w-[300px] h-[250px] rounded" src={`http://localhost:5000/images/${item.image}`} alt="" /> </Link>
                 <h1 className="text-[#006400] pt-2 text-[18px] pl-1 font-semibold">{item.title}</h1>
@@ -109,6 +109,10 @@ useEffect(()=>{
                   <h1><span className="font-bold">{item.sqft}</span> sqft</h1>
                 </div>
                 <h1 className="py-2 pl-1">{item.location}</h1>
+                <h1 className='absolute  -top-3 -left-3 bg-[#036194] text-2 text-white rounded-full py-3 px-3 font-bold'>{item.Gurinumber}</h1>
+
+                <div className='flex justify-center'>
+                <h1 className={`py-2 pl-1 ${item.available ? "text-green-500" : "text-red-500"}`}>{item.available ? "Available" : "Unavailable"}</h1>                </div>
               </div> 
             )
           })}

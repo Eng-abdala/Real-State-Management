@@ -43,6 +43,7 @@ app.post('/posthouse', upload.single('img'), async (req, res) => {
         bed: req.body.bed,
         bath: req.body.bath,
         sqft: req.body.sqft,
+        Gurinumber: req.body.Gurinumber,
         location: req.body.location,
     })
     const savePost = await postHouse.save();
@@ -76,6 +77,24 @@ app.delete("/remove/:id", async (req,res)=>{
 
 // image route 
 app.use('/images',express.static("images"))
+
+
+
+
+// Update house availability when rented
+app.put('/rent/:id', async (req, res) => {
+    try {
+        const house = await RentHouse.findById(req.params.id);
+        if (!house) return res.status(404).json({ message: "House not found" });
+
+        house.available = false; // Set house as unavailable
+        await house.save();
+        
+        res.json({ message: "House rented successfully!", house });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
 
 
 // User Register And Login Section

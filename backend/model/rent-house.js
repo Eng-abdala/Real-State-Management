@@ -29,7 +29,16 @@ const rentHouseSchema =  mongoose.Schema({
         type:String,
         required:true
     },
+    Gurinumber:{
+
+        type:Number,
+        required : true
+    },
    
+    available: { type: Boolean, 
+                 default: true
+     } // Default: true (Available)
+
 
 })
 
