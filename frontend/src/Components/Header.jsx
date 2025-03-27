@@ -32,7 +32,7 @@ useEffect(()=>{
     getHouse()  
 }   
 ,[])
-    const sentence = "Welcome Real State Management🚀";
+    const sentence = "Find Your Dream Home 🚀";
     const letters = sentence.split("");
 
     return <div className=" font-[Roboto]">
@@ -57,7 +57,8 @@ useEffect(()=>{
    
 
       {/* Second Section */}
-      <div className="bg-[url('src/images/dd.jpg')] relative h-[600px] bg-cover bg-center bg-gradient-to-b from-blue-500 to-green-500 items-center text-center pt-52">
+      <div className="bg-[url('src/images/dd.jpg')] relative h-[600px] bg-cover bg-center  items-center text-center pt-52">
+      <div class="absolute inset-0 bg-[#036194] opacity-50 "></div>
         <motion.h1 className="text-4xl text-[#036194] font-bold">
           {letters.map((letter, index) => (
             <motion.span
@@ -70,13 +71,13 @@ useEffect(()=>{
             </motion.span>
           ))}
         </motion.h1>
-        <motion.input value={search} onChange={(e)=>setSearch(e.target.value)}
+        <motion.input  value={search} onChange={(e)=>setSearch(e.target.value)}
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="border-2 border-[#a8dadc] bg-[#003049] text-white mt-3 w-[650px] py-4 rounded-4xl outline-none pl-2"
+          className="border-2 border-[#a8dadc] relative z-10 bg-[#003049] text-white mt-3 w-[650px] py-4 rounded-4xl outline-none pl-2"
           type="text"
-          placeholder="Address, Price Name"
+          placeholder="Address, Price ,Name and Location"
         />
         <motion.i
           className="fa-solid fa-magnifying-glass text-white absolute text-3xl top-[272px] right-[450px]"
@@ -86,9 +87,39 @@ useEffect(()=>{
         ></motion.i>
       </div>
 
+
+          {/* herro case */}
+
+          <div className='flex justify-center gap-10 relative -top-5'>
+
+            <div className='text-center w-[300px]'>
+            <i class="fa-solid fa-gears bg-[#003049] text-white text-[22px] py-6 px-5  border-3 border-dashed border-white rounded-full "></i>
+            <h1 className='font-bold py-2'>Sell Property</h1>
+            <p className='w-[270px] text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore </p>
+            </div>
+
+
+            <div className='text-center w-[300px]'>
+            <i class="fa-solid fa-house-user bg-[#003049] text-white text-[22px] py-6 px-6 border-3 border-dashed border-white rounded-full "></i>
+            <h1 className='font-bold py-2'>Single Apartment</h1>
+            <p className='w-[270px] text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore </p>
+            </div>
+            <i class="fa-solid fa-house-user"></i>
+
+            <div className='text-center w-[300px]'>
+            <i class="fa-solid fa-users-rays bg-[#003049] text-white text-[22px] py-6 px-5  border-3 border-dashed border-white rounded-full "></i>
+            <h1 className='font-bold py-2'>Family House</h1>
+            <p className='w-[270px] text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore </p>
+            </div>
+
+          </div>
+
+
+
+
       {/* Newest listings */}
       <div>
-        <h1 className="text-center font-[#036194] text-4xl font-bold mt-10">Newest listings</h1>
+        <h1 className="text-center font-[#036194] text-4xl font-bold mt-10">Find a house that suits you</h1>
 
         <motion.div
           className="grid grid-cols-[300px_300px_300px_300px] justify-center gap-8 my-10"
