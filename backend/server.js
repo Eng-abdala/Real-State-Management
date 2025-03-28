@@ -75,9 +75,30 @@ app.delete("/remove/:id", async (req,res)=>{
 })
 
 
+
+// API oo soo bandhigaayo one date from database
+
+app.get("/getSingle/:id", async  (req,res)=>{
+    const getsingle = await rentHouse.find({_id: req.params.id})
+    if(getsingle){
+        res.send(getsingle)
+    }
+})
+// ApI oo Updata 
+
+app.put("/Update/:id", async (req,res)=>{
+    const upada = await rentHouse.updateOne(
+        { _id: req.params.id },
+        {$set : req.body}
+    )
+    if(upada){
+        res.send("The data has been updated")
+    }
+})
+
+
 // image route 
 app.use('/images',express.static("images"))
-
 
 
 
@@ -88,23 +109,19 @@ app.put("/rent/:id", async (req, res) => {
 
         // Ensure the request has the 'available' field
         if (available === undefined) {
-            // return res.status(400).json({ message: "Missing availability status" });
             res.send("Missing availability status")
         }
 
         const updatedHouse = await RentHouse.findByIdAndUpdate(id, { available }, { new: true });
 
-        // res.status(200).json(updatedHouse);
         res.send(updatedHouse)
     } catch (error) {
-        // res.status(500).json({ message: "Error updating house status", error });
         res.send(error)
     }
 });
 
 
-
-
+ 
 // User Register And Login Section
 const RegisterLogin = require('./model/RegisterLogin')
 
@@ -214,7 +231,8 @@ app.post("/send-email", async (req, res) => {
 
 
   // Import schema 
-const Complaint = require("./model/Complaints")
+const Complaint = require("./model/Complaints");
+const rentHouse = require('./model/rent-house');
 
 //  API  POST
 app.post("/post/complainments", async (req, res) => {

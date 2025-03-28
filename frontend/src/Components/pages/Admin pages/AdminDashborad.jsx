@@ -70,6 +70,8 @@ const toggleRentStatus = (id, currentStatus) => {
 
        <div className="flex items-center ">
       <Link to="/Addhome"><button onClick={open} className="bg-[#a8dadc] cursor-pointer px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl">Add Home</button> </Link>
+      <Link to="/Update"><button onClick={open} className="bg-[#a8dadc] cursor-pointer px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl">Update Home</button> </Link>
+
       <Link to="/Complainment"> <button onClick={open} className=" px-8  text-white cursor-pointer  rounded-4xl "> <i class="fa-solid fa-box-open  text-[50px]"></i></button> </Link> 
        </div>
     </div>
