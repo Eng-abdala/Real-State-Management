@@ -2,6 +2,7 @@ import {motion} from 'framer-motion'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Footer from './pages/footer';
 
 export default function Header() {
 
@@ -80,7 +81,7 @@ useEffect(()=>{
           placeholder="Address, Price ,Name and Location"
         />
         <motion.i
-          className="fa-solid fa-magnifying-glass text-white absolute text-3xl top-[272px] right-[450px]"
+          className="fa-solid fa-magnifying-glass  z-10 text-white absolute text-3xl top-[272px] right-[450px]"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
@@ -149,6 +150,7 @@ useEffect(()=>{
           })}
         </motion.div>
       </div>
+      <Footer/>
     </div>
 
 
