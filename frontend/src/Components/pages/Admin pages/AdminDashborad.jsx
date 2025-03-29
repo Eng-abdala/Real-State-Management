@@ -65,12 +65,14 @@ const toggleRentStatus = (id, currentStatus) => {
 
 
     return <div>
-         <div className="flex  justify-between px-20 bg-[#003049] text-white py-6 items-center ">
-        <h1 className="text-4xl font-[JosefinSans]">Admin Page</h1>
+         <div className="flex  justify-between sm:px-20 px-3 bg-[#003049] text-white py-6 items-center ">
+        <h1 className="sm:text-4xl text-xl font-[JosefinSans]">Admin Page</h1>
 
        <div className="flex items-center ">
-      <Link to="/Addhome"><button onClick={open} className="bg-[#a8dadc] cursor-pointer px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl">Add Home</button> </Link>
-      <Link to="/Complainment"> <button onClick={open} className=" px-8  text-white cursor-pointer  rounded-4xl "> <i class="fa-solid fa-box-open  text-[50px]"></i></button> </Link> 
+      <Link to="/Addhome"><button onClick={open} className="bg-[#a8dadc] cursor-pointer sm:px-8 px-3 sm:py-2 text-[20px] text-[#003049] m-3 rounded-4xl">Add</button> </Link>
+      <Link to="/Update"><button onClick={open} className="bg-[#a8dadc] cursor-pointer sm:px-8 px-3 sm:py-2 text-[20px] text-[#003049] m-3 rounded-4xl">Update</button> </Link>
+
+      <Link to="/Complainment"> <button onClick={open} className=" sm:px-8 px-3  text-white cursor-pointer  rounded-4xl "> <i class="fa-solid fa-box-open  sm:text-[50px] text-[20px]"></i></button> </Link> 
        </div>
     </div>
 
@@ -80,10 +82,10 @@ const toggleRentStatus = (id, currentStatus) => {
 <h1 className="text-4xl  text-center font-semibold mt-10">Admin Access!</h1>
 
 <div>
-<div className="grid grid-cols-[400px_400px_400px] justify-center gap-8 my-10">
+<div className="grid sm:grid-cols-[400px_400px_400px] grid-cols-[350px] justify-center gap-8 my-10">
           {data.map((item) => {
             return (
-              <div className=" shadow-xl shadow-sky-200 w-[400px] py-3 rounded relative"> 
+              <div className=" shadow-xl shadow-sky-200 sm:w-[400px] w-[350px] py-3 rounded relative"> 
                 <img className="w-[400px] h-[250px] rounded" src={`http://localhost:5000/images/${item.image}`} alt="" /> 
                 <h1 className="text-[#006400] pt-2 text-[18px] pl-1 font-semibold">{item.title}</h1>
                 <h1 className="font-bold py-2 pl-1">${item.price}</h1>

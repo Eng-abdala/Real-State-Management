@@ -2,17 +2,19 @@ import { Route, Routes } from "react-router-dom"
 import Header from "./Components/Header"
 import Login from "./Components/Login"
 import SignUp from "./Components/SignUp"
-import Dashboard from "./Components/pages/Addhome"
+import Addhome from "./Components/pages/Admin pages/Addhome"
 import RentHouse from "./Components/pages/RentHouse"
-import Admin from "./Components/pages/Admin"
+import Admin from "./Components/pages/Admin pages/Admin"
 import ContactForm from "./Components/pages/Contact"
 import ComplaintForm from "./Components/pages/ComplaintForm"
-import Complainment from "./Components/pages/complainment"
-import AdminDashboard from "./Components/pages/AdminDashborad"
+import Complainment from "./Components/pages/Admin pages/Complainment"
+import AdminDashboard from "./Components/pages/Admin pages/AdminDashborad"
+import Update from "./Components/pages/Admin pages/Update"
+import UpdateFrom from "./Components/pages/Admin pages/UpdateFrom"
 function App() {
   return <Routes>
     <Route  path="/" element={<Header/>}/>
-    <Route  path="/Addhome" element={<Dashboard/>}/>
+    <Route  path="/Addhome" element={<Addhome/>}/>
     <Route  path="/rent/:id" element={<RentHouse/>}/>
     <Route  path="/contact" element={<ContactForm/>}/>
 
@@ -21,9 +23,11 @@ function App() {
 
     <Route  path="/login" element={<Login/>}/>
     <Route  path="/signUp" element={<SignUp/>}/>
+    
     <Route  path="/Admin" element={<Admin/>}/>
-    <Route  path="/Dashboard" element={<AdminDashboard/>}/>
-
+    <Route  path="/dashboard" element={<AdminDashboard/>}/>
+    <Route  path="/Update" element={<Update/>}/>
+    <Route  path="/UpdateFrom/:id" element={<UpdateFrom/>}/>
   </Routes>
 }
 

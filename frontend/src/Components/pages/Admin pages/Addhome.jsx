@@ -2,7 +2,7 @@ import {  useState } from "react"
 import axios from "axios"
 import {toast,Toaster} from "react-hot-toast"
 
-export default function Dashboard(){
+export default function Addhome(){
 
     const [tile,setTitle]=useState("")
     const [price,setPrice]=useState("")
