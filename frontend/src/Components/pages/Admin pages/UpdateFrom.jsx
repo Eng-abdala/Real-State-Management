@@ -68,17 +68,17 @@ useEffect(()=>{
 
     return <div  >
 
-<form className="border-2 border-[#a8dadc] w-[500px] text-center py-6 mx-auto bg-[#003049] opacity-90 text-white ">
+<form className="border-2 border-[#a8dadc] sm:w-[500px] w-[380px] mt-10 text-center py-6 mx-auto bg-[#003049] opacity-90 text-white ">
 
 <h1 className="text-center mt-6 text-2xl py-2 font-semibold">Add The Houses And  the Descriptions</h1>
 
-    <input value={tile}  onChange={(e)=> setTitle(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter House name" /> <br />
-    <input  value={price} onChange={(e)=> setPrice(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter Price" /> <br />
-    <input value={bed}  onChange={(e)=> setBed(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter bed" /> <br />
-    <input  value={bath} onChange={(e)=> setBath(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter bath" /> <br />
-    <input value={sqrl} onChange={(e)=> setSqrl(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter sqrl" /> <br />
-    <input  value={location} onChange={(e)=> setlocation(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter Location" /> <br />
-    <input  value={Number} onChange={(e)=> setNumber(e.target.value)} className="w-[400px] border-[#a8dadc] outline-none border-2 m-2 py-2 pl-2 rounded" type="text" placeholder="Enter The Unique Number of the Home" /> <br />
+    <input value={tile}  onChange={(e)=> setTitle(e.target.value)} className="sm:w-[400px] w-[350px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 py-1  pl-2 rounded" type="text" placeholder="Enter House name" /> <br />
+    <input  value={price} onChange={(e)=> setPrice(e.target.value)} className="sm:w-[400px] w-[350px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 py-1  pl-2 rounded" type="text" placeholder="Enter Price" /> <br />
+    <input value={bed}  onChange={(e)=> setBed(e.target.value)} className="sm:w-[400px] w-[350px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 py-1  pl-2 rounded" type="text" placeholder="Enter bed" /> <br />
+    <input  value={bath} onChange={(e)=> setBath(e.target.value)} className="sm:w-[400px] w-[350px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 py-1  pl-2 rounded" type="text" placeholder="Enter bath" /> <br />
+    <input value={sqrl} onChange={(e)=> setSqrl(e.target.value)} className="sm:w-[400px] w-[350px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 py-1  pl-2 rounded" type="text" placeholder="Enter sqrl" /> <br />
+    <input  value={location} onChange={(e)=> setlocation(e.target.value)} className="sm:w-[400px] w-[350px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 py-1  pl-2 rounded" type="text" placeholder="Enter Location" /> <br />
+    <input  value={Number} onChange={(e)=> setNumber(e.target.value)} className="sm:w-[400px] w-[350px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 py-1  pl-2 rounded" type="text" placeholder="Enter The Unique Number of the Home" /> <br />
     <button onClick={update} className="bg-[#a8dadc] text-3xl px-20 py-2 text-white rounded my-3">Save</button>
 
 

@@ -53,7 +53,7 @@ export default function Header() {
       <div
         className="bg-[url('src/images/dd.jpg')] relative sm:h-[600px] h-[300px] bg-cover bg-center items-center text-center sm:pt-52 pt-20"
       >
-        <div className="absolute inset-0 bg-[#036194] opacity-30 "></div>
+        <div className="absolute inset-0 bg-[#036194] opacity-20 "></div>
         <motion.h1 className="sm:text-4xl text-2xl text-[#036194] font-bold">
           {letters.map((letter, index) => (
             <motion.span
@@ -74,7 +74,7 @@ export default function Header() {
           transition={{ duration: 1, delay: 1 }}
           className="border-2 border-[#a8dadc] relative z-10 bg-[#003049] text-white mt-3 sm:w-[650px] w-[350px] sm:py-4 py-2 rounded-4xl outline-none pl-2"
           type="text"
-          placeholder="Name, Price and Location"
+          placeholder=" Name Price and Location "
         />
         <motion.i
           className="fa-solid fa-magnifying-glass  z-10 text-white absolute sm:text-3xl text-2xl sm:top-[272px] sm:right-[450px] right-8 top-34 "

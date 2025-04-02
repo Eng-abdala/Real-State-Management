@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ComplaintForm = ({ onClose }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [number, setNumber] = useState('')
   const [responseMessage, setResponseMessage] = useState('')
 
   // Handle form submission
@@ -19,7 +19,7 @@ const ComplaintForm = ({ onClose }) => {
       setResponseMessage(response.data.message)
       setName('')
       setEmail('')
-      setMessage('')
+      setNumber('')
 
       // Close the form after 2 seconds
       setTimeout(() => onClose(), )
@@ -56,8 +56,8 @@ const ComplaintForm = ({ onClose }) => {
           <div>
             <label className="block text-sm font-semibold text-gray-700">Message:</label>
             <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
               required
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
