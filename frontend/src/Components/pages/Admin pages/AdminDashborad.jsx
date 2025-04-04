@@ -8,6 +8,17 @@ export default function AdminDashboard({ open }) {
     const [data, setData] = useState([])
     const [menuOpen, setMenuOpen] = useState(false);
 
+  const [complaintCount, setComplaintCount] =useState(0)
+
+  // Complaints function for count
+  const getComplaints = () => {
+    axios.get('http://localhost:5000/get/complainments') 
+      .then((res) => setComplaintCount(res.data.length))
+      .catch((error) => console.log(error));
+ };
+
+
+
     const getHouse = () => {
         axios.get('http://localhost:5000/gethouse').then((res) => {
             setData(res.data)
@@ -18,6 +29,7 @@ export default function AdminDashboard({ open }) {
 
     useEffect(() => {
         getHouse()
+        getComplaints()
     }, [])
 
     const HandleDalte = (id) => {
@@ -55,7 +67,7 @@ export default function AdminDashboard({ open }) {
 
     return <div>
         {/* ----------------- Header ----------------- */}
-        <div className="flex justify-between sm:px-20 px-3 bg-[#003049] text-white py-6 items-center relative shadow-md">
+        <div className="flex justify-between sm:px-20 px-3 bg-[#003049] text-white py-10 items-center relative shadow-md">
             <h1 className="sm:text-4xl text-xl font-[JosefinSans]">Admin Page</h1>
 
             {/* Desktop Menu */}
@@ -69,6 +81,13 @@ export default function AdminDashboard({ open }) {
                 <Link to="/Complainment">
                     <button className="sm:px-8 px-3 text-white cursor-pointer hover:text-gray-300 rounded-2xl transition-all duration-300">
                         <i className="fa-solid fa-box-open sm:text-[50px] text-[20px]"></i>
+
+                        {complaintCount > 0 && (
+                <span className="absolute top-3 right-16 mr-15   bg-green-600 text-white text-2xl font-bold px-4 py-1 rounded-full">
+                  {complaintCount}
+                </span>
+              )}
+
                     </button>
                 </Link>
             </div>

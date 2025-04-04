@@ -11,9 +11,11 @@ import Complainment from "./Components/pages/Admin pages/Complainment"
 import AdminDashboard from "./Components/pages/Admin pages/AdminDashborad"
 import Update from "./Components/pages/Admin pages/Update"
 import UpdateFrom from "./Components/pages/Admin pages/UpdateFrom"
+import About from "./Components/pages/About"
 function App() {
   return <Routes>
     <Route  path="/" element={<Header/>}/>
+    <Route  path="/About" element={<About/>}/>
     <Route  path="/Addhome" element={<Addhome/>}/>
     <Route  path="/rent/:id" element={<RentHouse/>}/>
     <Route  path="/contact" element={<ContactForm/>}/>
@@ -28,6 +30,7 @@ function App() {
     <Route  path="/dashboard" element={<AdminDashboard/>}/>
     <Route  path="/Update" element={<Update/>}/>
     <Route  path="/UpdateFrom/:id" element={<UpdateFrom/>}/>
+    
   </Routes>
 }
 
