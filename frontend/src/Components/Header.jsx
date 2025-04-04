@@ -37,7 +37,7 @@ export default function Header() {
       <div className="flex justify-between sm:px-10 px-5 bg-[#003049] font-semibold text-white py-6 items-center">
         <h1 className="sm:text-4xl text-2xl font-[JosefinSans]">Real Estate</h1>
 
-        <div className="flex gap-10 text-2xl font-semibold sm:flex hidden">
+        <div className=" gap-10 text-2xl font-semibold sm:flex hidden">
           <Link to="/" className="cursor-pointer hover:text-[#a8dadc]">Home</Link>
           <Link to="/About" className="cursor-pointer hover:text-[#a8dadc]">About</Link>
         </div>

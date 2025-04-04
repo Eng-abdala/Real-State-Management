@@ -73,10 +73,10 @@ export default function AdminDashboard({ open }) {
             {/* Desktop Menu */}
             <div className="sm:flex hidden items-center space-x-4">
                 <Link to="/Addhome">
-                    <button className="transition-all duration-300 bg-[#a8dadc] hover:bg-[#82c7d0] cursor-pointer sm:px-8 px-3 sm:py-2 text-[20px] text-[#003049] m-3 rounded-2xl shadow-sm hover:scale-105">Add</button>
+                    <button className="transition-all duration-300 bg-[#a8dadc] hover:bg-[#82c7d0] cursor-pointer sm:px-8 px-3 sm:py-2 text-[20px] text-[#003049] m-3 rounded-2xl shadow-sm hover:scale-105">Add House</button>
                 </Link>
                 <Link to="/Update">
-                    <button className="transition-all duration-300 bg-[#a8dadc] hover:bg-[#82c7d0] cursor-pointer sm:px-8 px-3 sm:py-2 text-[20px] text-[#003049] m-3 rounded-2xl shadow-sm hover:scale-105">Update</button>
+                    <button className="transition-all duration-300 bg-[#a8dadc] hover:bg-[#82c7d0] cursor-pointer sm:px-8 px-3 sm:py-2 text-[20px] text-[#003049] m-3 rounded-2xl shadow-sm hover:scale-105">Update House</button>
                 </Link>
                 <Link to="/Complainment">
                     <button className="sm:px-8 px-3 text-white cursor-pointer hover:text-gray-300 rounded-2xl transition-all duration-300">
@@ -100,10 +100,10 @@ export default function AdminDashboard({ open }) {
             {/* Mobile Dropdown */}
             <div className={`absolute top-full right-3 bg-[#003049] rounded-md shadow-md w-[200px] py-3 space-y-2 sm:hidden z-50 transition-all duration-300 origin-top-right transform ${menuOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}>
                 <Link to="/Addhome">
-                    <button className="w-full text-left px-4 py-2 hover:bg-[#1b4d70] transition-all duration-300 rounded">Add</button>
+                    <button className="w-full text-left px-4 py-2 hover:bg-[#1b4d70] transition-all duration-300 rounded">Add House</button>
                 </Link>
                 <Link to="/Update">
-                    <button className="w-full text-left px-4 py-2 hover:bg-[#1b4d70] transition-all duration-300 rounded">Update</button>
+                    <button className="w-full text-left px-4 py-2 hover:bg-[#1b4d70] transition-all duration-300 rounded">Update House</button>
                 </Link>
                 <Link to="/Complainment">
                     <button className="w-full text-left px-4 py-2 hover:bg-[#1b4d70] transition-all duration-300 rounded">Complainment</button>
