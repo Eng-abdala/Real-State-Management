@@ -18,33 +18,53 @@ const Complainment = () => {
     }
   };
 
+  // Handle delete complaint
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:5000/complainments/${id}`)
+      .then(() => {
+        console.log("Deleted successfully");
+        setComplaints((prevComplaints) =>
+          prevComplaints.filter((item) => item._id !== id)
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     fetchComplaints();
   }, []);
 
   return (
     <div>
-    <h2 className="text-2xl font-bold text-gray-800 mb-6 mt-10 text-center">Submitted Complaints</h2>
-    <div className=" sm:w-[500px] w-[380px] sm:p-8 p-2">
+      <h2 className="text-2xl font-bold text-gray-800 mb-6 mt-10 text-center">Submitted Complaints</h2>
+      <div className="sm:w-[500px] w-[380px] sm:p-8 p-2">
 
-      {loading && <p className="text-gray-600 text-center">Loading complaints...</p>}
-      {error && <p className="text-red-500 text-center">{error}</p>}
+        {loading && <p className="text-gray-600 text-center">Loading complaints...</p>}
+        {error && <p className="text-red-500 text-center">{error}</p>}
 
-      {complaints.length === 0 && !loading ? (
-        <p className="text-center text-gray-600 py-4">No complaints submitted yet.</p>
-      ) : (
-        <div className="grid sm:grid-cols-[400px_400px_400px] grid-rows-1 sm:ml-20 ml-2 gap-10">
-          {complaints.map((complaint, index) => (
-            <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-md border border-gray-300">
-              <p className="text-lg font-semibold text-gray-800"><strong>Name:</strong> {complaint.name}</p>
-              <p className="text-gray-700"><strong>Email:</strong> {complaint.email}</p>
-              <p className="text-gray-700"><strong>Message:</strong> {complaint.message}</p>
-              <p className="text-gray-600 text-sm"><strong>Submitted On:</strong> {new Date(complaint.createdAt).toLocaleDateString()}</p>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+        {complaints.length === 0 && !loading ? (
+          <p className="text-center text-gray-600 py-4">No complaints submitted yet.</p>
+        ) : (
+          <div className="grid sm:grid-cols-[400px_400px_400px] grid-rows-1 sm:ml-20 ml-2 gap-10">
+            {complaints.map((complaint, index) => (
+              <div key={index} className="bg-gray-100 px-4 py-2 rounded-lg shadow-md border border-gray-300">
+                <p className="text-lg font-semibold text-gray-800"><strong>Name:</strong> {complaint.name}</p>
+                <p className="text-gray-700"><strong>Email:</strong> {complaint.email}</p>
+                <p className="text-gray-700"><strong>Message:</strong> {complaint.message}</p>
+                <p className="text-gray-600 text-sm"><strong>Submitted On:</strong> {new Date(complaint.createdAt).toLocaleDateString()}</p>
+                <div className='flex justify-end mt-2'>
+                  <i
+                    onClick={() => handleDelete(complaint._id)}
+                    className="fa-solid fa-trash text-2xl text-red-600 cursor-pointer hover:text-red-800 transition-all duration-300"
+                  ></i>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

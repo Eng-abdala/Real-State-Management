@@ -55,11 +55,10 @@ export default function Footer ({opne}){
 			<div>
 			  <h3 className="text-2xl font-semibold mb-4">Follow Us</h3>
 			  <div className="flex space-x-4">
-				<ul>
+				<ul className='flex gap-3'>
 
-				<li className="hover:text-white">Facebook</li>
-				<li  className="hover:text-white">Twitter</li>
-				<li  className="hover:text-white">Instagram</li>
+				<i class="fa-brands fa-facebook text-2xl text-white "></i> 	
+				<i class="fa-brands fa-linkedin text-2xl text-white "></i>	
 				</ul>
 			  </div>
 			</div>

@@ -231,8 +231,10 @@ app.post("/send-email", async (req, res) => {
 
 
   // Import schema 
-const Complaint = require("./model/Complaints");
-const rentHouse = require('./model/rent-house');
+  const rentHouse = require('./model/rent-house');
+  
+
+  const Complaint = require("./model/Complaints");
 
 //  API  POST
 app.post("/post/complainments", async (req, res) => {
@@ -256,6 +258,15 @@ app.get("/get/complainments", async (req, res) => {
     }
 })
 
+// Api delete
+app.delete("/complainments/:id", async (req,res)=>{
+    const removee= await Complaint.deleteOne({
+        _id: req.params.id
+    })
+    if(removee){
+        res.send("The register has been deleted")
+    }
+})
 
 
 

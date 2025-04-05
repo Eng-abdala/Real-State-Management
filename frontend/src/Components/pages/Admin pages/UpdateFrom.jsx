@@ -54,9 +54,8 @@ useEffect(()=>{
         toast.success("You have created the data ")
         
         setTimeout(() => {
-            
             navige("/dashboard")
-        }, 2000);
+        }, 1000);
      }).catch((er)=>{
         console.log(er)
      })
