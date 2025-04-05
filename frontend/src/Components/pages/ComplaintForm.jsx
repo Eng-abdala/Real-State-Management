@@ -66,7 +66,7 @@ const ComplaintForm = ({ onClose }) => {
             <button
               type="submit"
               className="bg-blue-300 text-white py-2 px-6 text-xl font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
-         <Link to ={"/"} >  <button type="button"onClick={onClose} className="bg-gray-400 text-white py-2 px-7 text-xl font-semibold rounded-md hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-gray-400"> Close</button> </Link> 
+         <Link to ={"/home"} >  <button type="button"onClick={onClose} className="bg-gray-400 text-white py-2 px-7 text-xl font-semibold rounded-md hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-gray-400"> Close</button> </Link> 
           </div>
         </form>
         {responseMessage && (

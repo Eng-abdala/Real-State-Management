@@ -27,13 +27,12 @@ export default function AdminDashboard({ open }) {
         })
     }
 
-    useEffect(() => {
-        getHouse()
-        getComplaints()
-    }, [])
+   
 
     const HandleDalte = (id) => {
         axios.delete("http://localhost:5000/remove/" + id).then(() => {
+            console.log("Deleted successfully")
+            setData((prevData) => prevData.filter((item) => item._id !== id))
 
         }).catch((eror) => {
             console.log(eror)
@@ -63,6 +62,8 @@ export default function AdminDashboard({ open }) {
 
     useEffect(() => {
         protectRouter()
+        getHouse()
+        getComplaints()
     }, [])
 
     return <div>

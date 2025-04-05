@@ -53,18 +53,18 @@ export default function About() {
       <div className="flex justify-between sm:px-10 px-5 bg-[#003049] font-semibold text-white py-6 items-center">
         <h1 className="sm:text-4xl text-2xl font-[JosefinSans]">Real Estate</h1>
 
-        <div className="flex gap-10 text-2xl font-semibold sm:flex hidden">
-          <Link to="/" className="cursor-pointer hover:text-[#a8dadc]">Home</Link>
+        <div className=" gap-10 text-2xl font-semibold sm:flex hidden">
+          <Link to="/home" className="cursor-pointer hover:text-[#a8dadc]">Home</Link>
           <Link to="/About" className="cursor-pointer hover:text-[#a8dadc]">About</Link>
         </div>
 
         <div className="sm:flex items-center hidden">
-          <button className="bg-[#a8dadc] px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl">
+          {/* <button className="bg-[#a8dadc] px-8 py-2 text-[20px] text-[#003049] m-3 rounded-4xl">
             <Link to="/login">Login</Link>
           </button>
           <button className="px-8 py-2 text-[20px] text-[#a8dadc] m-3 rounded-4xl hover:border-2 hover:border-[#a8dadc]">
             <Link to="/signUp">Sign Up</Link>
-          </button>
+          </button> */}
           <Link to="/ComplaintForm">
             <button className="bg-[#003049] border-2 border-slate-700 hover:bg-[#a8dadc] hover:text-black text-white px-4 py-2 rounded-full transition duration-300 ease-in-out shadow-md">
               Send Complaint
@@ -87,8 +87,8 @@ export default function About() {
         >
           <Link to="/" className="text-lg hover:text-[#a8dadc]" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/About" className="text-lg hover:text-[#a8dadc]" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link to="/login" className="text-lg hover:text-[#a8dadc]" onClick={() => setMenuOpen(false)}>Login</Link>
-          <Link to="/signUp" className="text-lg hover:text-[#a8dadc]" onClick={() => setMenuOpen(false)}>Sign Up</Link>
+          {/* <Link to="/login" className="text-lg hover:text-[#a8dadc]" onClick={() => setMenuOpen(false)}>Login</Link>
+          <Link to="/signUp" className="text-lg hover:text-[#a8dadc]" onClick={() => setMenuOpen(false)}>Sign Up</Link> */}
           <Link to="/ComplaintForm">
             <button className="bg-[#a8dadc] text-[#003049] px-4 py-2 rounded-full hover:bg-white transition-all" onClick={() => setMenuOpen(false)}>
               Send Complaint

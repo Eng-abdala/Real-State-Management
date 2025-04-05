@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function Footer (){
+export default function Footer ({opne}){
     return <>
     {/* Clients */}
      <div className="bg-[url('src/images/bg.jpeg')] relative h-[300px] bg-cover bg-center  text-center">
@@ -39,11 +39,16 @@ export default function Footer (){
 			<div>
 			  <h3 className="text-2xl font-semibold mb-4">Quick Links</h3>
 			  <ul className="space-y-2">
-				<li className="hover:text-white">Home</li>
-				<li className="hover:text-white">Available Rentals</li>
-				<li className="hover:text-white">About Us</li>
-				<li className="hover:text-white"> Contact</li>
-			  </ul>
+			<Link to={"/home"}><li className="hover:text-white">Home</li></Link>	
+				<li className="hover:text-white ">Available Rentals</li>
+				<Link to={"/About"}><li className="hover:text-white">About Us</li></Link>
+				<li className="hover:text-white"><a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=ciilanesalaad482561@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Contact
+  </a></li>			  </ul>
 			</div>
 	
 			{/* Social Media */}

@@ -32,7 +32,7 @@ export default function SignUp(){
             }).then(()=>{
                 toast.success("Congratulations")
                 setTimeout(() => {
-                    navigate("/login")
+                    navigate("/")
                 }, 2000);
             }).catch((e)=>{
                 console.log(e)
@@ -46,7 +46,7 @@ export default function SignUp(){
 
     const signup=(e)=>{
         e.preventDefault()
-        navigate("/login")
+        navigate("/")
 
     }
 

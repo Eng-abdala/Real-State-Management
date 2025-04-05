@@ -47,7 +47,7 @@ const ContactForm = () => {
       <input  className="w-[300px] border-2 border-sky-950 m-3" type="email" name="email" placeholder="Your Email" required onChange={handleChange}/><br />
 
       <input  className="w-[300px] border-2 border-sky-950 m-3" type="text" name="phone" placeholder="Your Phone" required onChange={handleChange}/><br />
-      <textarea  className="w-[300px] border-2 border-sky-950 m-3" name="description" placeholder="Your Message" required onChange={handleChange}></textarea> <br />
+      <textarea  className="w-[300px] border-2 border-sky-950 m-3" name="description" placeholder="Your Unique Number" required onChange={handleChange}></textarea> <br />
 
       {/* Submit Button */}
       <button className="bg-sky-950 w-[300px]  text-white text-[20px] h-[30px]"  onClick={handleSubmit}> Send</button>

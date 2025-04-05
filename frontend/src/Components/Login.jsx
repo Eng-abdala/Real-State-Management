@@ -55,7 +55,7 @@ export default function Login(){
 
        if (!selectedHouse) {
         localStorage.removeItem("selected-item");
-        navigate("/")
+        navigate("/home")
     }
     
     else {
@@ -109,7 +109,7 @@ export default function Login(){
             animate={{opacity:1 ,y:0}}
             transition={{duration:0.5 , delay:1}}
             
-            onChange={(e)=> setusename(e.target.value)} className="border-2  outline-none border-[#a8dadc] w-[350px] py-2 m-3 rounded pl-10" type="Email" placeholder="Enter Your Email" /> <br />
+            onChange={(e)=> setusename(e.target.value)} className="border-2  outline-none border-[#a8dadc] w-[350px] py-2 m-3 rounded pl-10" type="Email" placeholder="Enter username" /> <br />
             <motion.img
              initial={{opacity:0 , x:-20}}
              animate={{opacity:1 ,x:0}}

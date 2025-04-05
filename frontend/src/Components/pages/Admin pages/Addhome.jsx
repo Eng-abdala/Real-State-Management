@@ -41,7 +41,7 @@ export default function Addhome(){
      }).then(()=>{
 
         toast.success("You have created the data ")
-        navigae("/")
+        navigae("/dashboard")
      }).catch((er)=>{
         console.log(er)
      })
