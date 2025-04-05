@@ -159,8 +159,8 @@ export default function Header() {
               <h1 className="text-[#006400] pt-2 text-[18px] pl-1 font-semibold">{item.title}</h1>
               <h1 className="font-bold py-2 pl-1">${item.price}</h1>
               <div className="flex gap-2 pl-1">
-                <h1><span className="font-bold">{item.bed}</span> bed</h1>
-                <h1><span className="font-bold">{item.bath}</span> bath</h1>
+                <h1><span className="font-bold">{item.bed}</span> Rooms</h1>
+                <h1><span className="font-bold">{item.bath}</span> SB</h1>
                 <h1><span className="font-bold">{item.sqft}</span> sqft</h1>
               </div>
               <h1 className="py-2 pl-1">{item.location}</h1>

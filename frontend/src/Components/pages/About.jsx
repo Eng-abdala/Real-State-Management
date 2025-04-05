@@ -198,9 +198,9 @@ transition={{ duration: 2 }}
   
   className=" relative border-2 border-gray-300 shadow w-[290px] my-10">
     <img className="w-75 h-50" src="src/images/0b8b90c4-5f99-4d78-93f3-c8e4989a9c15.jpeg" alt="" />
-      <img className="w-15 ml-1 border-4 h-15 border-[#036194] rounded-full absolute top-40 shadow-2xl" src="src/images/WhatsApp_Image_2024-09-02_at_06.20.30_e81b8f5d-removebg-preview.png" alt="" />
+      <img className="w-15 ml-1 border-4 h-15 border-[#036194] rounded-full absolute top-40 shadow-2xl" src="src/images/WhatsApp Image 2025-04-04 at 19.21.16_26d76865.jpg" alt="" />
     <div className="pl-1">
-      <h1 className="mt-6 font-bold">Abdullahi Mohamed</h1>
+      <h1 className="mt-6 font-bold">Muscab Abdirashid</h1>
       <h1 className="mt-1">Im One of The Owners Real State Company</h1>
       <button className="bg-[#00f7ff] px-2 py-1 font-semibold rounded my-2">Know About Me</button>
 
@@ -214,9 +214,9 @@ transition={{ duration: 2 }}
   
   className=" relative border-2 border-gray-300 shadow w-[290px] my-10">
     <img className="w-75 h-50" src="src/images/0b8b90c4-5f99-4d78-93f3-c8e4989a9c15.jpeg" alt="" />
-      <img className="w-15 ml-1 border-4 h-15 border-[#036194] rounded-full absolute top-40 shadow-2xl" src="src/images/WhatsApp_Image_2024-09-02_at_06.20.30_e81b8f5d-removebg-preview.png" alt="" />
+      <img className="w-15 ml-1 border-4 h-15 border-[#036194] rounded-full absolute top-40 shadow-2xl" src="src/images/WhatsApp Image 2025-04-04 at 20.15.43_b3fae912.jpg" alt="" />
     <div className="pl-1">
-      <h1 className="mt-6 font-bold">Abdullahi Mohamed</h1>
+      <h1 className="mt-6 font-bold">Aadan Mohamed</h1>
       <h1 className="mt-1">Im One of The Owners Real State Company</h1>
       <button className="bg-[#00f7ff] px-2 py-1 font-semibold rounded my-2">Know About Me</button>
 

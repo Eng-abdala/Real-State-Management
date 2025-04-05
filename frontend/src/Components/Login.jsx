@@ -38,10 +38,7 @@ export default function Login(){
         if( username.trim()=="" || Passwod.trim()==""){
             toast.error("Please Form the fill!")
         }
-        // else{
-        //     toast.success("Successfully Login")
-        //     navigate("/rent")
-        // }
+       
 
         else{
             axios.post("http://localhost:5000/login",{
@@ -49,23 +46,10 @@ export default function Login(){
                 "Password": Passwod
             }).then((res)=>{
                 if(res.data.success){
-                     // Retrieve the stored house data from localStorage
-      const selectedHouse = localStorage.getItem("selected-item");
-       // If data exists, redirect to rent-house page with house details in URL
-
-       if (!selectedHouse) {
-        localStorage.removeItem("selected-item");
         navigate("/home")
-    }
-    
-    else {
-            navigate("/rent");
 
-                      }
-                }
-                else{
-                    toast.error("username and password are incorrect!")
-                }
+               
+               }
                 
             }).catch((e)=>{
                 console.log(e)
@@ -103,19 +87,20 @@ export default function Login(){
         
         className="w-[400px]" src="src/images/login.jpeg" alt="" />
         <form className="relative">
-            <motion.input
+             <motion.input
             value={username}
-            initial={{opacity:0 , y:-20}}
-            animate={{opacity:1 ,y:0}}
-            transition={{duration:0.5 , delay:1}}
+             initial={{opacity:0 ,x:-50}}
+             animate={{opacity:1, x:0}}
+             transition={{duration:1, delay:1}}
             
-            onChange={(e)=> setusename(e.target.value)} className="border-2  outline-none border-[#a8dadc] w-[350px] py-2 m-3 rounded pl-10" type="Email" placeholder="Enter username" /> <br />
+            
+            onChange={(e)=> setusename(e.target.value)} className="border-2 outline-none border-[#a8dadc] w-[350px] py-2 m-3 rounded pl-10" type="text" placeholder="Enter Username" /> <br />
             <motion.img
-             initial={{opacity:0 , x:-20}}
-             animate={{opacity:1 ,x:0}}
-             transition={{duration:0.5 , delay:1}}
+            initial={{opacity:0 ,x:-50}}
+            animate={{opacity:1, x:0}}
+            transition={{duration:1, delay:1.4}}
             
-            className="w-[30px] absolute top-5 left-7" src="src/images/email (1).png" alt="" />
+            className="w-[30px] absolute top-5 left-7" src="src/images/user-profile.png" alt="" />
 
             <motion.input 
             value={Passwod}

@@ -59,8 +59,8 @@ export default function Addhome(){
 
     <input  onChange={(e)=> setTitle(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter House name" /> <br />
     <input  onChange={(e)=> setPrice(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter Price" /> <br />
-    <input  onChange={(e)=> setBed(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter bed" /> <br />
-    <input  onChange={(e)=> setBath(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter bath" /> <br />
+    <input  onChange={(e)=> setBed(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter Rooms" /> <br />
+    <input  onChange={(e)=> setBath(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter Swimming bools" /> <br />
     <input  onChange={(e)=> setSqrl(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter sqrl" /> <br />
     <input  onChange={(e)=> setlocation(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter Location" /> <br />
     <input  onChange={(e)=> setNumber(e.target.value)} className="sm:w-[400px] w-[300px] border-[#a8dadc] outline-none border-2 m-2 sm:py-2 pl-2 rounded" type="text" placeholder="Enter The Unique Number of the Home" /> <br />

@@ -22,7 +22,7 @@ export default function Update(){
     useEffect(()=>{
         getHouse()  
     }  )
-    return <div className="bg-[#a8dadc] h-screen">
+    return <div className="bg-[#a8dadc] h-full">
       <h1 className="text-3xl font-semibold text-center py-10">Update Page</h1>
         <div className="grid sm:grid-cols-[320px_320px_320px] grid-cols-[330px]  justify-center gap-8 my-10">
           {data.map((item) => {
